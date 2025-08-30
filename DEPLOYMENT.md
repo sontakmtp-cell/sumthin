@@ -3,18 +3,18 @@
 ## 📋 **Các bước thực hiện:**
 
 ### **1. Cấu hình GitHub Repository**
-- Đảm bảo repository có tên: `project_management_1756517687190`
+- Đảm bảo repository có tên: `Crane`
 - Vào Settings > Pages
 - Source: Deploy from a branch
 - Branch: `gh-pages` hoặc `main`
 - Folder: `/ (root)`
 
 ### **2. Cấu hình đã được thực hiện:**
-✅ **Vite config**: Đã thêm `base: '/project_management_1756517687190/'`  
+✅ **Vite config**: Đã thêm `base: '/Crane/'`  
 ✅ **Router**: Đã thay đổi từ `BrowserRouter` sang `HashRouter`  
 ✅ **404.html**: Đã tạo file redirect cho SPA  
-✅ **index.html**: Đã thêm script SPA routing  
 ✅ **Package.json**: Đã thêm scripts deploy  
+✅ **Output directory**: Đã cấu hình build ra thư mục `dist`  
 
 ### **3. Deploy tự động:**
 ```bash
@@ -30,10 +30,10 @@ npm run deploy
 # Build project
 npm run build
 
-# Push thư mục build lên branch gh-pages
-git add build
+# Push thư mục dist lên branch gh-pages
+git add dist
 git commit -m "Deploy to GitHub Pages"
-git subtree push --prefix build origin gh-pages
+git subtree push --prefix dist origin gh-pages
 ```
 
 ## 🔧 **Troubleshooting:**
@@ -41,16 +41,17 @@ git subtree push --prefix build origin gh-pages
 ### **Vấn đề thường gặp:**
 1. **Trang trắng**: Kiểm tra base URL trong `vite.config.mjs`
 2. **Routing không hoạt động**: Đảm bảo sử dụng `HashRouter`
-3. **Assets không load**: Kiểm tra đường dẫn trong build folder
+3. **Assets không load**: Kiểm tra đường dẫn trong dist folder
+4. **Build error**: Đảm bảo output directory là `dist`
 
 ### **Kiểm tra:**
-- URL GitHub Pages: `https://username.github.io/project_management_1756517687190/`
-- Build folder có chứa đầy đủ files
+- URL GitHub Pages: `https://username.github.io/Crane/`
+- Dist folder có chứa đầy đủ files
 - Console browser có lỗi gì không
 
 ## 📁 **Cấu trúc sau khi build:**
 ```
-build/
+dist/
 ├── index.html
 ├── assets/
 │   ├── index-*.js
@@ -60,6 +61,11 @@ build/
 ```
 
 ## 🌐 **Sau khi deploy thành công:**
-- Trang web sẽ hoạt động tại: `https://username.github.io/project_management_1756517687190/`
+- Trang web sẽ hoạt động tại: `https://username.github.io/Crane/`
 - Tất cả routes sẽ hoạt động với hash routing
 - Assets sẽ load đúng từ base URL
+
+## ⚠️ **Lưu ý quan trọng:**
+- **Output directory**: `dist` (không phải `build`)
+- **Base URL**: `/Crane/` (phải khớp với tên repository)
+- **Router**: Sử dụng `HashRouter` để tương thích với GitHub Pages
