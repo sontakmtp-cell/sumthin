@@ -4,10 +4,10 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import tagger from "@dhiwise/component-tagger";
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  // Base URL for GitHub Pages
-  base: '/sumthin/',
-  
+export default defineConfig(({ mode }) => ({
+  // Base URL for GitHub Pages (set to '/' in dev)
+  base: mode === 'production' ? '/sumthin/' : '/',
+
   build: {
     outDir: "dist",
     chunkSizeWarningLimit: 2000,
@@ -24,4 +24,4 @@ export default defineConfig({
     strictPort: true,
     allowedHosts: ['.amazonaws.com', '.builtwithrocket.new']
   }
-});
+}));
