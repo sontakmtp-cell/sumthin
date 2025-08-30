@@ -3,14 +3,14 @@
 ## 📋 **Các bước thực hiện:**
 
 ### **1. Cấu hình GitHub Repository**
-- Đảm bảo repository có tên: `Crane`
+- Đảm bảo repository có tên: `sumthin`
 - Vào Settings > Pages
 - Source: Deploy from a branch
 - Branch: `gh-pages` hoặc `main`
 - Folder: `/ (root)`
 
 ### **2. Cấu hình đã được thực hiện:**
-✅ **Vite config**: Đã thêm `base: '/Crane/'`  
+✅ **Vite config**: Đã thêm `base: '/sumthin/'`  
 ✅ **Router**: Đã thay đổi từ `BrowserRouter` sang `HashRouter`  
 ✅ **404.html**: Đã tạo file redirect cho SPA  
 ✅ **Package.json**: Đã thêm scripts deploy  
@@ -45,7 +45,7 @@ git subtree push --prefix dist origin gh-pages
 4. **Build error**: Đảm bảo output directory là `dist`
 
 ### **Kiểm tra:**
-- URL GitHub Pages: `https://username.github.io/Crane/`
+- URL GitHub Pages: `https://username.github.io/sumthin/`
 - Dist folder có chứa đầy đủ files
 - Console browser có lỗi gì không
 
@@ -61,11 +61,11 @@ dist/
 ```
 
 ## 🌐 **Sau khi deploy thành công:**
-- Trang web sẽ hoạt động tại: `https://username.github.io/Crane/`
+- Trang web sẽ hoạt động tại: `https://username.github.io/sumthin/`
 - Tất cả routes sẽ hoạt động với hash routing
 - Assets sẽ load đúng từ base URL
 
 ## ⚠️ **Lưu ý quan trọng:**
 - **Output directory**: `dist` (không phải `build`)
-- **Base URL**: `/Crane/` (phải khớp với tên repository)
+- **Base URL**: `/sumthin/` (phải khớp với tên repository)
 - **Router**: Sử dụng `HashRouter` để tương thích với GitHub Pages

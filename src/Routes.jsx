@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter, Routes as RouterRoutes, Route } from "react-router-dom";
+import { BrowserRouter, Routes as RouterRoutes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import ErrorBoundary from "./components/ErrorBoundary";
 
@@ -31,7 +31,7 @@ import Recruitment from "./pages/recruitment";
 
 const Routes = () => {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <ErrorBoundary>
         <ScrollToTop />
         <RouterRoutes>
@@ -63,7 +63,7 @@ const Routes = () => {
           <Route path="/" element={<LoginRegister />} />
         </RouterRoutes>
       </ErrorBoundary>
-    </HashRouter>
+    </BrowserRouter>
   );
 };
 

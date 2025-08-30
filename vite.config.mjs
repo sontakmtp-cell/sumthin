@@ -5,14 +5,17 @@ import tagger from "@dhiwise/component-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  // Base URL for GitHub Pages - replace 'your-repo-name' with actual repo name
-  base: '/Crane/',
+  // Base URL for GitHub Pages
+  base: '/sumthin/',
   
-  // This changes the out put dir from dist to build
-  // comment this out if that isn't relevant for your project
   build: {
     outDir: "dist",
     chunkSizeWarningLimit: 2000,
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      },
+    },
   },
   plugins: [tsconfigPaths(), react(), tagger()],
   server: {
